@@ -13,9 +13,8 @@ import { useModalStore } from "../store/modalStore";
 import {
   useCreateTask,
   useUpdateTask,
-  useDeleteTask,
 } from "../hooks/useTaskMutaion";
-import { PriorityLevelEnum, type Task } from "../types/types";
+import { PriorityLevelEnum } from "../types/types";
 import { useNotificationStore } from "../../../shared/store/notificationsStore";
 
 const TaskModal = () => {
