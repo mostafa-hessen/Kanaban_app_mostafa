@@ -53,6 +53,8 @@ This project uses `json-server` to mock a backend database. Open a separate term
 
 ```bash
 # If json-server is not installed globally
+npm install -g json-server@0.17.4
+
 npx json-server ./database/db.json --port 4000
 
 # OR if you have it globally

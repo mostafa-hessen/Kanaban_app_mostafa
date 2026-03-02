@@ -20,8 +20,9 @@ export interface Task {
 }
 
 export type Filter = {
-  column: TaskStatusEnum;
-  q?: string;
+  column?: TaskStatusEnum;
+  title?: string;
+  
   _page?: number;
   _per_page?: number;
 };

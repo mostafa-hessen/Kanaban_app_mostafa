@@ -14,10 +14,8 @@ import { useTasksQuery } from "../hooks/useTask";
 import { useDroppable } from "@dnd-kit/core";
 import Pagination from "@mui/material/Pagination";
 import { useState } from "react";
-import { useSearchStore } from "../store/searchStore";
 
 function TaskColumn({ status }: { status: TaskStatusEnum }) {
-  const {search} = useSearchStore();
   const { setNodeRef } = useDroppable({
     id: status,
   });
@@ -28,7 +26,6 @@ function TaskColumn({ status }: { status: TaskStatusEnum }) {
     column: status, 
     _page: page, 
     _per_page: limit, 
-    q: search || undefined 
   });
   
   const tasks = data?.tasks;

@@ -7,6 +7,6 @@ interface SearchStore{
 }
 
 export const useSearchStore = create<SearchStore>((set) => ({
-    search: "",
+    search: "Task",
     setSearch: (search: string) => set({ search }),
 }));
