@@ -81,9 +81,9 @@ export default function TaskCard({ task }: { task: Task }) {
                   handelEdite();
                 } }
               sx={{
-                bgcolor: "grey.100",
+                bgcolor: "action.hover",
                 "&:hover": {
-                  bgcolor: "primary.light",
+                  bgcolor: "primary.main",
                   color: "white",
                 },
                 transition: "all 0.2s ease",
@@ -101,7 +101,7 @@ export default function TaskCard({ task }: { task: Task }) {
           }}
               size="small"
               sx={{
-                bgcolor: "grey.100",
+                bgcolor: "action.hover",
                 "&:hover": {
                   bgcolor: "error.main",
                   color: "white",

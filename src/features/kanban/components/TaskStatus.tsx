@@ -1,23 +1,25 @@
-import React, { use } from "react";
 import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 
-import { Box, Stack } from "@mui/material";
-import theme from "../../../app/providers/theme/theme";
+import { Stack, useTheme } from "@mui/material";
 import { Circle } from "@mui/icons-material";
 import { useTasksQuery } from "../hooks/useTask";
 import type { TaskStatusEnum } from "../types/types";
 
 function StautsHeader({ status  }: { status?: string }) {
+  const theme = useTheme();
   const {data }= useTasksQuery()
   const tasks = data?.tasks;
   const countByStatus = (status: TaskStatusEnum) =>
   tasks?.filter(task => task.column === status).length ;
-  return (
-    <Stack direction="row" spacing={2} alignItems="center">
-      <Circle sx={{ color: theme.palette.status[status as keyof typeof theme.palette.status]?.text , fontSize: 15 }} />
+  
+  const statusColor = theme.palette.status[status as TaskStatusEnum]?.text || theme.palette.text.primary;
 
-      <Typography variant="h6" sx={{fontWeight:"bold"}}>{status}</Typography>
+  return (
+    <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
+      <Circle sx={{ color: statusColor, fontSize: 12 }} />
+
+      <Typography variant="subtitle1" sx={{fontWeight:"bold", textTransform: 'capitalize'}}>{status?.toLowerCase()}</Typography>
 
       <Stack spacing={3} direction="row">
         <Badge
@@ -27,7 +29,11 @@ function StautsHeader({ status  }: { status?: string }) {
           showZero
           sx={{
             "& .MuiBadge-badge": {
-              backgroundColor: theme.palette.grey[300], // خلفية ديناميكية
+              backgroundColor: theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+              color: 'inherit',
+              fontSize: '0.75rem',
+              height: '20px',
+              minWidth: '20px'
             },
           }} 
         />
@@ -37,3 +43,4 @@ function StautsHeader({ status  }: { status?: string }) {
 }
 
 export default StautsHeader;
+

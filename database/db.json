@@ -5,7 +5,7 @@
       "title": "Task 1",
       "description": "Description 1",
       "priority": "HIGH",
-      "column": "IN REVIEW"
+      "column": "IN PROGRESS"
     },
     {
       "id": "t002",
@@ -19,14 +19,14 @@
       "title": "Task 3",
       "description": "Description 3",
       "priority": "LOW",
-      "column": "IN REVIEW"
+      "column": "IN PROGRESS"
     },
     {
       "id": "t004",
       "title": "Task 4",
       "description": "Description 4",
       "priority": "HIGH",
-      "column": "IN REVIEW"
+      "column": "TO DO"
     },
     {
       "id": "t005",
@@ -264,28 +264,28 @@
       "title": "Task 38",
       "description": "Description 38",
       "priority": "MEDIUM",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t039",
       "title": "Task 39",
       "description": "Description 39",
       "priority": "LOW",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t040",
       "title": "Task 40",
       "description": "Description 40",
       "priority": "HIGH",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t041",
       "title": "Task 41",
       "description": "Description 41",
       "priority": "MEDIUM",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t042",
@@ -313,42 +313,42 @@
       "title": "Task 45",
       "description": "Description 45",
       "priority": "LOW",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t046",
       "title": "Task 46",
       "description": "Description 46",
       "priority": "HIGH",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t047",
       "title": "Task 47",
       "description": "Description 47",
       "priority": "MEDIUM",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t048",
       "title": "Task 48",
       "description": "Description 48",
       "priority": "LOW",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t049",
       "title": "Task 49",
       "description": "Description 49",
       "priority": "HIGH",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "t050",
       "title": "Task 50",
       "description": "Description 50",
       "priority": "MEDIUM",
-      "column": "IN REVIEW"
+      "column": "DONE"
     },
     {
       "id": "1770",
@@ -356,13 +356,6 @@
       "description": "الحمدلله",
       "priority": "HIGH",
       "column": "DONE"
-    },
-    {
-      "id": "d084",
-      "title": "3esx",
-      "description": "edwsx",
-      "priority": "LOW",
-      "column": "IN REVIEW"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

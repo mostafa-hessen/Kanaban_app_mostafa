@@ -1,14 +1,14 @@
 export enum PriorityLevelEnum {
-   High = "HIGH",
+  High = "HIGH",
   Medium = "MEDIUM",
-  Low = "LOW"
+  Low = "LOW",
 }
 
 export enum TaskStatusEnum {
   ToDo = "TO DO",
   InProgress = "IN PROGRESS",
   InReview = "IN REVIEW",
-  Done = "DONE"
+  Done = "DONE",
 }
 
 export interface Task {
@@ -19,12 +19,12 @@ export interface Task {
   column: TaskStatusEnum;
 }
 
-export type Filter ={
+export type Filter = {
   column: TaskStatusEnum;
-  search?: string;
+  q?: string;
   _page?: number;
-  _limit?: number;
-}
+  _per_page?: number;
+};
 
 export type TasksResponse = {
   tasks: Task[];

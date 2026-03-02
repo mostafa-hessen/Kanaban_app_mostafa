@@ -1,6 +1,7 @@
 import {
-  Button,
+  Box,
   CircularProgress,
+  LinearProgress,
   Paper,
   Stack,
   Typography,
@@ -8,25 +9,31 @@ import {
 import TaskCard from "./TaskCard";
 import StautsHeader from "./TaskStatus";
 import { TaskStatusEnum } from "../types/types";
-import theme from "../../../app/providers/theme/theme";
 import AddTaskButton from "./TaskButton";
 import { useTasksQuery } from "../hooks/useTask";
 import { useDroppable } from "@dnd-kit/core";
 import Pagination from "@mui/material/Pagination";
 import { useState } from "react";
+import { useSearchStore } from "../store/searchStore";
 
 function TaskColumn({ status }: { status: TaskStatusEnum }) {
+  const {search} = useSearchStore();
   const { setNodeRef } = useDroppable({
     id: status,
   });
   
   const limit = 10;
   const [page, setPage] = useState(1);
-  const { data, isLoading, error } = useTasksQuery({ column: status , _page:page, _limit:limit});
+  const { data, isLoading, error,isFetching } = useTasksQuery({ 
+    column: status, 
+    _page: page, 
+    _per_page: limit, 
+    q: search || undefined 
+  });
   
   const tasks = data?.tasks;
 
-  const totalTasks = tasks?.length || 0; 
+  const totalTasks = data?.total || 0; 
   const totalPages = Math.ceil(totalTasks / limit);
 
 
@@ -38,30 +45,17 @@ function TaskColumn({ status }: { status: TaskStatusEnum }) {
     <Paper
       sx={{
         p: 2,
-        bgcolor: theme.palette.grey[200],
-        borderRadius: theme.shape.borderRadius,
+        bgcolor: 'background.paper',
+        borderRadius: 2,
         minHeight: "100vh",
+        border: '1px solid',
+        borderColor: 'divider'
       }}
       elevation={0}
       ref={setNodeRef}
     >
-        {
-        console.log(tasks)
-        // console.log(data)
-        }
       <StautsHeader status={status} />
-      <Stack spacing={2} sx={{ my: 2 }}>
-      
-        {/* {tasks &&
-          tasks?.filter((task) => task?.column === status)
-            ?.map((task) => <TaskCard key={task.id} task={task} />)} */}
-      </Stack>
-
-      <Stack>
-        <AddTaskButton status={status} />
-      </Stack>
-
-    <Stack spacing={2} direction="row" justifyContent="center" sx={{ mt: 2 }}>
+      <Stack spacing={2} direction="row" justifyContent="center" sx={{ mt: 2 }}>
         <Pagination
           count={totalPages}
           page={page}
@@ -70,6 +64,29 @@ function TaskColumn({ status }: { status: TaskStatusEnum }) {
           shape="rounded"
         />
       </Stack>
+
+      <Box sx={{ height: 4, my: 1 }}>
+        {isFetching && <LinearProgress sx={{ borderRadius: 2 }} />}
+      </Box>
+
+      <Stack
+        spacing={2}
+        sx={{
+          my: 2,
+          opacity: isFetching ? 0.6 : 1,
+          transition: "opacity 0.3s ease-in-out",
+        }}
+      >
+        {tasks?.map((task) => (
+          <TaskCard key={task.id} task={task} />
+        ))}
+      </Stack>
+
+      <Stack>
+        <AddTaskButton status={status} />
+      </Stack>
+
+    
     </Paper>
   );
 }
