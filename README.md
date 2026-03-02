@@ -1,6 +1,6 @@
 # 📋 Kanban Task Manager
 
-A professional, feature-rich Kanban board application built with modern web technologies as part of a Frontend Developer Assessment. This project demonstrates best practices in React/Next.js development, including state management, asynchronous data fetching, and an intuitive UI/UX.
+A professional, feature-rich Kanban board application built with modern web technologies as part of a Frontend Developer Assessment. This project demonstrates best practices in React.js development, including state management, asynchronous data fetching, and an intuitive UI/UX.
 
 ---
 
@@ -8,13 +8,11 @@ A professional, feature-rich Kanban board application built with modern web tech
 
 ### 🌗 Light Mode
 
-![Kanban Light Mode](./public/screenshots/light_mode.png)
+![Kanban Light Mode](https://i.ibb.co/XZp6vpnB/Screenshot-2026-03-02-072940.png)
 
 ### 🌑 Dark Mode
 
-![Kanban Dark Mode](./public/screenshots/dark_mode.png)
-
----
+![Kanban Dark Mode](https://i.ibb.co/Ndqk0MnJ/Screenshot-2026-03-02-073103.png)
 
 ## ✨ Features
 
@@ -29,7 +27,6 @@ A professional, feature-rich Kanban board application built with modern web tech
 
 ## 🛠 Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) / [React](https://reactjs.org/)
 - **State Management**: [Zustand](https://github.com/pmndrs/zustand)
 - **Data Fetching**: [React Query (TanStack Query)](https://tanstack.com/query/latest)
 - **UI Components**: [Material UI (MUI)](https://mui.com/)
@@ -72,7 +69,7 @@ Install dependencies then run the application:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) (or the port specified in your terminal) to view the application in your browser.
+Open [http://localhost:4000](http://localhost:4000) (or the port specified in your terminal) to view the application in your browser.
 
 ---
 
@@ -104,12 +101,14 @@ This project was built with insights and best practices from the following resou
 
 ### 🎓 Educational Resources
 
-- [MUI & React - Level 1 (ITI Course)](https://mostafa-hessen.github.io/courses/MUI_React/Day1_MUI.html)
-- [MUI & React - Level 2 (ITI Course)](https://mostafa-hessen.github.io/courses/MUI_React/Day2_MUI.html)
-- [Kanban Board Architecture Guide 1](https://youtu.be/xyxrB2Aa7KE?si=Z6ZIH06EEyJ_0_92)
-- [Kanban Board Architecture Guide 2](https://youtu.be/QhSXNY8sy_0?si=HG-mfpJ5P5r8e5Nn)
-- [React Query Mastery Guide](https://youtu.be/novnyCaa7To?si=90YDh_Zsh5slpFx-)
-- [Drag and Drop Implementation Guide](https://www.youtube.com/watch?v=DVqVQwg_6_4)
+- **Original Course Materials**: I have revisited and utilized my own curriculum from previous courses I delivered as an **instructor** at the **Information Technology Institute (ITI)** to ensure technical depth and best practices:
+  - [MUI & React - Level 1 (ITI Course)](https://mostafa-hessen.github.io/courses/MUI_React/Day1_MUI.html)
+  - [MUI & React - Level 2 (ITI Course)](https://mostafa-hessen.github.io/courses/MUI_React/Day2_MUI.html)
+- **External Guides**:
+  - [Kanban Board Architecture Guide 1](https://youtu.be/xyxrB2Aa7KE?si=Z6ZIH06EEyJ_0_92)
+  - [Kanban Board Architecture Guide 2](https://youtu.be/QhSXNY8sy_0?si=HG-mfpJ5P5r8e5Nn)
+  - [React Query Mastery Guide](https://youtu.be/novnyCaa7To?si=90YDh_Zsh5slpFx-)
+  - [Drag and Drop Implementation Guide](https://www.youtube.com/watch?v=DVqVQwg_6_4)
 
 ---
 
@@ -118,7 +117,7 @@ This project was built with insights and best practices from the following resou
 - Source code is clearly structured within the `src/` directory.
 - All core requirements (4 columns, D&D, Search, Pagination, React Query) have been implemented.
 - Comments are provided in the source code where necessary for complex logic.
-- Managed by Mostafa Hessen.
+- Built by **Mostafa Hessen**, incorporating years of experience as an instructor and educational content creator.
 
 ---
 

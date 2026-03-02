@@ -17,8 +17,7 @@ function TaskBoard() {
 
     if (active.id === over.id) return; // هتا بتاكد لو المستخدم شغل دماغه وعمل دراج في نفس المكان 😂
 
-    console.log(active.id);
-    console.log(over.id);
+ 
     
     update({
       id: active.id as string | number,
@@ -29,11 +28,19 @@ function TaskBoard() {
   };
   return (
     <DndContext onDragEnd={handelDragEnd}>
-      <Stack maxWidth="xkl" sx={{ m: 3 }}>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
+      <Stack 
+       
+        sx={{ 
+          m: 3, 
+          pb: 2  ,
+          overflowX: "auto",
+          
+        }}
+      >
+        <Box sx={{ flexGrow: 1, minWidth: { xs: "800px", md: "100%" } }}>
+          <Grid container spacing={3}>
             {Object.values(TaskStatusEnum).map((status) => (
-              <Grid size={3} key={status}>
+              <Grid size={{ xs: 12, md: 6 , lg:3 }} key={status}>
                 <TaskColumn status={status} />
               </Grid>
             ))}
